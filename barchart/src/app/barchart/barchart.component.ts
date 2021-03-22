@@ -11,5 +11,8 @@ export class BarchartComponent implements OnInit {
 
   ngOnInit() {
   }
+  alert(yil:number,aktif:number,pasif:number){
+    alert("Yıl : "+yil +" Aktif : "+aktif+" Pasif : "+pasif)
+  }
 
 }

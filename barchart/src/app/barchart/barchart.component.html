@@ -27,7 +27,7 @@
         <label for="nitelik" >Pasif </label>
         <input #pasif  type="number" name="pasif" min="-9999" max="9999" class="form-control" style="width: 900px;" id="ilid" placeholder="Pasif Değeri Giriniz">
       </div>
-        <button style="margin-top: 10px; float: right; margin-right: 10px;"   type="button" class="btn btn-dark">Fitrele</button>
+        <button (click)="alert(yil.value,aktif.value,pasif.value)" style="margin-top: 10px; float: right; margin-right: 10px;"   type="button" class="btn btn-dark">Fitrele</button>
         </div>
     </form>
   </div>
