@@ -1,4 +1,4 @@
-<div style="margin-top: 50px;" class="card card-body">
+<div style="margin-top: 20px;" class="card card-body">
   <h3 style="margin-top: 20px;">Bar - Chart</h3>
   <hr width="100%" color="blue" size="3">
   <div>
@@ -31,6 +31,17 @@
         </div>
     </form>
   </div>
+  </div>
+
+
+  <div class="chart">
+    <canvas baseChart
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [legend]="barChartLegend"
+    [chartType]="barChartType">
+    </canvas>
   </div>
 
 
