@@ -7,7 +7,7 @@
       <div class="form-group">
         <label for="yil" >Yıl</label>
         <select #yil class="form-select" aria-label="Default select example" style="width: 900px;height: 35px;" >
-          <option disabled>Yıl Seçiniz</option>
+          <option value="Yıl Seçiniz" disabled>Yıl Seçiniz</option>
             <option value="2015">2015</option>
             <option  value="2016">2016</option>
             <option value="2017">2017</option>
@@ -21,27 +21,25 @@
       <div class="col-md-6 form-group" style="float: left;">
           <div class="form-group">
           <label for="ilce" >Aktif</label>
-          <input #aktif  type="number" name="aktif" min="-9999" max="9999" class="form-control" style="width: 900px;" id="ilceid" placeholder="Aktif Değeri Giriniz">
+          <input  #aktif  type="number" name="aktif" min="5" max="500" class="form-control" style="width: 900px;" id="ilceid" placeholder="Aktif Değeri Giriniz">
       </div>
       <div class="form-group">
         <label for="nitelik" >Pasif </label>
-        <input #pasif  type="number" name="pasif" min="-9999" max="9999" class="form-control" style="width: 900px;" id="ilid" placeholder="Pasif Değeri Giriniz">
+        <input #pasif  type="number" name="pasif" min="5" max="500" class="form-control" style="width: 900px;" id="ilid" placeholder="Pasif Değeri Giriniz">
       </div>
-        <button (click)="alert(yil.value,aktif.value,pasif.value)" style="margin-top: 10px; float: right; margin-right: 10px;"   type="button" class="btn btn-dark">Fitrele</button>
+        <button (click)="alert(yil.value,aktif.value,pasif.value); yil.value='Yıl Seçiniz';aktif.value=' ';pasif.value=' ';"  style="margin-top: 10px; float: right; margin-right: 10px;"   type="button" class="btn btn-dark">Fitrele</button>
         </div>
     </form>
+    <div class="chart">
+      <canvas baseChart
+      [datasets]="[{ data: [aktif.value],label:'Aktif Değer'},{ data: [pasif.value],label:'Pasif Değer'}]"
+      [labels]="[yil.value]"
+      [options]="barChartOptions"
+      [legend]="barChartLegend"
+      [chartType]="barChartType">
+      </canvas>
+    </div>
   </div>
-  </div>
-
-
-  <div class="chart">
-    <canvas baseChart
-    [datasets]="barChartData"
-    [labels]="barChartLabels"
-    [options]="barChartOptions"
-    [legend]="barChartLegend"
-    [chartType]="barChartType">
-    </canvas>
   </div>
 
 

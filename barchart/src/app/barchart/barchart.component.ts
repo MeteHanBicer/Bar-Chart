@@ -5,7 +5,6 @@ const SAMPLE_BARCHART_DATA:any[] = [
   { data: [25,50,60,91,36,54,50],label:'Pasif Değer'}
 ];
 
-const SAMPLE_BARCHART_LABELS : string[] = [ '2015','2021'];
 
 @Component({
   selector: 'app-barchart',
@@ -17,7 +16,6 @@ export class BarchartComponent implements OnInit {
   constructor() { }
 
     public barChartData : any[] = SAMPLE_BARCHART_DATA;
-    public barChartLabels:string[] = SAMPLE_BARCHART_LABELS;
     public barChartType = 'bar';
     public barChartLegend = false;
     public barChartOptions:any = {
@@ -30,5 +28,6 @@ export class BarchartComponent implements OnInit {
   alert(yil:number,aktif:number,pasif:number){
     alert("Yıl : "+yil +" Aktif : "+aktif+" Pasif : "+pasif)
   }
-
+  public SAMPLE_BARCHART_LABELS : string[] = [ '2015','2021'];
+  public barChartLabels:string[] = this.SAMPLE_BARCHART_LABELS;
 }
