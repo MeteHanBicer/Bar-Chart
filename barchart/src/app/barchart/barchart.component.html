@@ -30,7 +30,9 @@
         <!-- <button (click)="alert(yil.value,aktif.value,pasif.value); yil.value='Yıl Seçiniz';aktif.value=' ';pasif.value=' ';"  style="margin-top: 10px; float: right; margin-right: 10px;"   type="button" class="btn btn-dark">Fitrele</button> -->
         </div>
     </form>
-    <div class="chart">
+
+    <!-- Bar char -->
+    <!-- <div class="chart">
       <canvas baseChart
       [datasets]="[{ data: [aktif.value,aktif.value,aktif.value,aktif.value,aktif.value],label:'Aktif Değer'},{ data: [pasif.value,pasif.value,pasif.value,pasif.value,pasif.value],label:'Pasif Değer'}]"
       [labels]="[yil.value,yil.value,yil.value,yil.value,yil.value]"
@@ -38,6 +40,18 @@
       [legend]="barChartLegend"
       [chartType]="barChartType">
       </canvas>
-    </div>
+    </div> -->
   </div>
+  </div>
+  <div style="display: block">
+    <canvas mdbChart
+        [chartType]="chartType"
+        [datasets]="chartDatasets"
+        [labels]="chartLabels"
+        [colors]="chartColors"
+        [options]="chartOptions"
+        [legend]="true"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
+    </canvas>
   </div>
